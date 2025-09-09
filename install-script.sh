@@ -13,6 +13,6 @@ if [ $? -eq 0 ]
 then 
     dnf install git -y
 else
-    "Previous not done"
+    echo -e $R "Previous installation not done"
     exit 1
 fi
