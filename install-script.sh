@@ -6,7 +6,7 @@ if [ "$USER_ID" -ne 0 ]; then
     echo "Not a root user"
     exit 1
 else
-    dnf install mysql -y
+    dnf install mysqll -y
 fi
 
 if [ $? -eq 0 ]
