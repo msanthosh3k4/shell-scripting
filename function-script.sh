@@ -4,7 +4,7 @@ B=$(\e[32m)
 USER_ID=$(id -u)
 
 Validate(){
-if [ "$USER_ID" -ne 0 ]; 
+if [ "$USER_ID" -ne 0 ]
 then
     echo "Not a root user"
 else
