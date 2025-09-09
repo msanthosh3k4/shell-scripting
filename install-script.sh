@@ -8,7 +8,7 @@ else
     dnf install mysql -y
 fi
 
-if [ $? -e 0 ]
+if [ $? -eq 0 ]
 then 
     dnf install git -y
 else
