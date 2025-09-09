@@ -21,6 +21,16 @@ then
     exit 1 #other than 0
 fi
 
+dnf list installed git
+
+if [ $? -ne 0 ]
+then
+    dnf install git -y
+    VALIDATE $? "Installing Git"
+else
+    echo -e "Git is already ... $Y INSTALLED"
+fi
+
 dnf list installed mysql
 
 if [ $? -ne 0 ]
@@ -32,12 +42,3 @@ else
 fi
 
 
-dnf list installed git
-
-if [ $? -ne 0 ]
-then
-    dnf install git -y
-    VALIDATE $? "Installing Git"
-else
-    echo -e "Git is already ... $Y INSTALLED"
-fi
