@@ -12,12 +12,14 @@ else
 fi
 }
 
-if[ $? -eq 0 ]
-then
-    Validate $USER_ID
-    dnf install git -y 
-    echo -e $R "installed successfull"
-else
-    echo -e $B "Previous installation not done"
-fi
+Validate
+
+# if[ $? -eq 0 ]
+# then
+#     Validate $USER_ID
+#     dnf install git -y 
+#     echo -e $R "installed successfull"
+# else
+#     echo -e $B "Previous installation not done"
+# fi
 
