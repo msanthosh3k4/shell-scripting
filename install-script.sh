@@ -8,10 +8,10 @@ else
     dnf install mysql -y
 fi
 
-if [ $? -e 0]
+if [ $? -e 0 ]
 then 
     dnf install git -y
 else
-    "Previous not dome "
+    "Previous not done"
     exit 1
 fi
