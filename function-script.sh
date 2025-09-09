@@ -3,16 +3,13 @@ R=$(\e[31m)
 B=$(\e[32m)
 USER_ID=$(id -u)
 
-Validate(){
+
 if [ $USER_ID -ne 0 ]
 then
-    echo "Not a root user"
+    echo -e $R "Not a root user"
 else
-    dnf install mysql -y
+    dnf install mysql -y 
 fi
-}
-
-Validate
 
 # if[ $? -eq 0 ]
 # then
