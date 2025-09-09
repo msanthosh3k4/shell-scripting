@@ -20,11 +20,11 @@ do
     dnf list installed $package
     if[ $? ne 0 ]
     then
-    dnf install $package
-    VALIDATE $? "Installing"
+        dnf install $package
+        VALIDATE $? "Installing"
     else 
-    echo "package is already installed"
-    exit 1 #other than 0
+        echo "package is already installed"
+        exit 1 #other than 0
     fi
 done
 
