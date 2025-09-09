@@ -1,3 +1,12 @@
 #!/bin/bash
 
-dnf install mysql -y
+USER = $(id -u)
+
+if [ USER -ne 0]
+
+then 
+    echo "NOt an root user"
+
+else 
+    dnf install mysql -y
+fi
