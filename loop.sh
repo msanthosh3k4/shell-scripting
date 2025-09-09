@@ -18,7 +18,7 @@ VALIDATE(){
 for packeges in $@
 do
     dnf list installed $package
-    if[ $? ne 0 ]
+    if[ $? -ne 0 ]
     then
         dnf install $package
         VALIDATE $? "Installing"
