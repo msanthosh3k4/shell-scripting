@@ -9,7 +9,7 @@ Y="\e[33m"
 log-Folder="var/logs/shell-scriptinglogs"
 log-file=$(echo $0 | cut -d "." -f1)
 Time_Stamp=$(date +%y-%m-%d)
-log-file-name="log-Folder/log-file//log-file-name-$Time_Stamp.log"
+log-file-name="log-Folder/log-file/log-file-name-$Time_Stamp.log"
 VALIDATE() {
     if [ $1 -ne 0 ]; then
         echo -e "$2 ... $R FAILURE"
