@@ -6,7 +6,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 
-log-Folder="var/logs/shell-scriptinglogs"
+log-Folder="/var/logs/shell-scriptinglogs"
 log-file=$(echo $0 | cut -d "." -f1)
 Time_Stamp=$(date +%y-%m-%d)
 log-file-name="log-Folder/log-file/log-file-name-$Time_Stamp.log"
