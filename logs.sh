@@ -6,7 +6,7 @@ G="\e[32m"
 Y="\e[33m"
 
 log_folder="/var/log/shell-scriptinglogs"   # Fixed: Added missing leading slash
-log_file_name="$(basename $0 | cut -d '.' -f1)-$(date +%y-%m-%d).log"
+log_file_name="$(echo $0 | cut -d '.' -f1)-$(date +%y-%m-%d).log"
 log_file_path="$log_folder/$log_file_name"
 
 # Create log folder if it doesn't exist
