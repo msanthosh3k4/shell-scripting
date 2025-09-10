@@ -6,6 +6,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 Time_Stamp=$(date)
+logFile="shell-scripting/logs.txt"
 
 VALIDATE() {
     if [ $1 -ne 0 ]; then
@@ -25,9 +26,9 @@ for package in "$@"; do
     dnf list installed "$package" 
     if [ $? -ne 0 ]; then
         dnf install $package -y 
-        VALIDATE $? "Installing $package"
+        VALIDATE $? "Installing $package" &>>logFile
     else 
-        echo -e "$Y$package is already installed:$Time_Stamp"
+        echo -e "$Y$package is already installed:$Time_Stamp" &>>logFile
     fi
 done
 
