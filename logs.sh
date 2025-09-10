@@ -20,17 +20,17 @@ VALIDATE() {
 }
 
 if [ "$USERID" -ne 0 ]; then
-    echo -e "${R}You must be root to run this script" &>>log-file-name
+    echo -e "${R}You must be root to run this script" &>>log_file_path
     exit 1
 fi
 
 for package in "$@"; do
-    dnf list installed "$package" &>>log-file-name
+    dnf list installed "$package" &>>log_file_path
     if [ $? -ne 0 ]; then
         dnf install $package -y 
-        VALIDATE $? "Installing $package" &>>log-file-name 
+        VALIDATE $? "Installing $package" &>>log_file_path 
     else 
-        echo -e "$Y$package is already installed:$Time_Stamp" &>>log-file-name 
+        echo -e "$Y$package is already installed:$Time_Stamp" &>>log_file_path 
     fi
 done
 
