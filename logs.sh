@@ -7,7 +7,7 @@ G="\e[32m"
 Y="\e[33m"
 
 log_folder="/shell-scriptinglogs"
-log_file_name="$(basename $0 | cut -d '.' -f1)-$(date +%y-%m-%d).log"
+log_file_name="logs.txt-$(date +%y-%m-%d).log"
 log_file_path="$log_folder/$log_file_name"
 
 VALIDATE() {
