@@ -9,5 +9,7 @@ then
     FILES_TO_DELETE=$(find "$source_Dir" -name "*.log" -mtime +14)
     while read -r file; do
         echo "$file" &>>"$log_Store"
+        rm -rf $file
+        echo "deleted files are: $file "
     done <<< "$FILES_TO_DELETE"
 fi
