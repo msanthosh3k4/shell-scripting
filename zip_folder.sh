@@ -5,7 +5,7 @@ DAYS=${1:-14}
 
 if [ -d "$source_Dir" ]; then
     FILES_TO_Zip=$(find "$source_Dir" -name "*.log" -mtime +"$DAYS")
-    if [ -n "$FILES_TO_Zip"]
+    if [ -n "$FILES_TO_Zip" ]
     then   
         echo "these are files to ZIP : $FILES_TO_Zip" &>>log_Store
     else
