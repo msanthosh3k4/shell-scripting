@@ -1,7 +1,8 @@
 #!/bin/bash
 
 source_Dir="/home/ec2-user/shell-logs"
-log_Store = "/home/ec2-user/logged_logs/logs-$(date).log"
+log_Store="/home/ec2-user/logged_logs/logs-$(date +'%Y-%m-%d_%H-%M-%S').log"
+
 
 if [ -d "$source_Dir" ]; 
 then
