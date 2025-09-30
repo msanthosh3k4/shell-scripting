@@ -12,4 +12,5 @@ then
         echo "these are files to ZIP : $FILES_TO_Zip" &>>log_Store
     else
         echo no files to zip
+    fi
 fi
