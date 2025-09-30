@@ -1,13 +1,11 @@
 #!/bin/bash
 
-source_Dir="home/ec2-user/shell-logs"
+source_Dir="/home/ec2-user/shell-logs"
 
-
-if [ -d $source_Dir ]
+if [ -d "$source_Dir" ]; 
 then
-    while read -r files
-    do
-        echo $files
-    done < source_Dir
+    FILES_TO_DELETE=$(find "$source_Dir" -name "*.log" -mtime +14)
+    while read -r file; do
+        echo "$file"
+    done <<< "$FILES_TO_DELETE"
 fi
-        
