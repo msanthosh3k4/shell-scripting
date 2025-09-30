@@ -8,6 +8,6 @@ if [ -d "$source_Dir" ];
 then
     FILES_TO_DELETE=$(find "$source_Dir" -name "*.log" -mtime +14)
     while read -r file; do
-        echo "$file" &>>log_Store
+        echo "$file" &>>"$log_Store"
     done <<< "$FILES_TO_DELETE"
 fi
