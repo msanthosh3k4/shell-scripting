@@ -88,6 +88,19 @@ if [ -d "$source_Dir" ]; then
         zip_file="$log_Dir/logs-archive-$(date +'%Y-%m-%d_%H-%M-%S').zip"
         echo "$FILES" | zip -@ "$zip_file" >> "$log_Store" 2>&1
         echo "Zipped files to: $zip_file" >> "$log_Store"
+        if [ -f "$ZIP_FILE" ]
+        then
+            echo -e "Successfully created zip file for files older than $DAYS"
+            while read -r filepath # here filepath is the variable name, you can give any name
+            do
+                echo "Deleting file: $filepath" &>>$log_Store
+                rm -rf $filepath
+                echo "Deleted file: $filepath"
+            done <<< $FILES
+        else
+            echo -e "$R Error:: $N Failed to create ZIP file "
+            exit 1
+        fi
     fi
 else
     echo "Source directory does not exist: $source_Dir" >> "$log_Store"
