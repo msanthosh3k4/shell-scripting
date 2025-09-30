@@ -9,6 +9,6 @@ if [ -d "$source_Dir" ]; then
     then   
         echo "these are files to ZIP : $FILES_TO_Zip" &>>log_Store
     else
-        echo no files to zip
+        echo "no files to zip" &>>log_Store
     fi
 fi
